@@ -1,0 +1,119 @@
+input[type="text"] {
+  height: 45px;
+  background-color: #f2f2f2;
+  border: none;
+  outline: none;
+  border-radius: 23px;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: 600;
+}
+input[type="password"] {
+  height: 45px;
+  background-color: #f2f2f2;
+  border: none;
+  outline: none;
+  border-radius: 23px;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: 600;
+}
+input[type="email"] {
+  height: 45px;
+  background-color: #f2f2f2;
+  border: none;
+  outline: none;
+  border-radius: 23px;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: 600;
+}
+button {
+  height: 45px;
+  background-color: #f2f2f2;
+  border: none;
+  outline: none;
+  border-radius: 23px;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: 600;
+  background-color: $color-primary;
+  color: #fff;
+  font-weight: 700;
+  &:hover {
+    opacity: 0.8;
+    transition: 500ms;
+    transform: scale(0.98);
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: #000;
+  }
+}
+input[type="text"].error {
+  border: 2px solid #f00;
+}
+input[type="password"].error {
+  border: 2px solid #f00;
+}
+input[type="email"].error {
+  border: 2px solid #f00;
+}
+button.error {
+  border: 2px solid #f00;
+}
+textarea {
+  background-color: #f2f2f2;
+  border: none;
+  outline: none;
+  border-radius: 23px;
+  padding: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: 600;
+  resize: vertical;
+  height: 200px;
+}
+
+span.error {
+  padding: 0 20px;
+  color: #f23c3c;
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+p.error {
+  padding: 0 20px;
+  color: #f23c3c;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.button-disabled {
+  background-color: $color;
+  opacity: 0.9;
+  &:hover {
+    background-color: $color;
+    opacity: 0.9;
+    transition: none;
+    transform: none;
+    cursor: not-allowed;
+  }
+
+  &:active {
+    background-color: $color;
+    opacity: 0.9;
+    transition: none;
+    transform: none;
+    cursor: not-allowed;
+  }
+}

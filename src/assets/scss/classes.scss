@@ -1,0 +1,27 @@
+.full {
+  height: 100vh;
+}
+.flex {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.direction-column {
+  flex-direction: column;
+}
+.text-center {
+  text-align: center;
+}
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+.pokemon-logo-banner {
+  width: 60%;
+}
+.pokemon-logo-home {
+  width: 160px;
+}

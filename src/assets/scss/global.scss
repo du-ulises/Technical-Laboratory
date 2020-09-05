@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Vibur&display=swap");
+
+@import "~line-awesome/dist/line-awesome/css/line-awesome.css";
+
+$bg: #000;
+$color: #424242;
+$color-primary: #217b78;
+$break-small: 640px;
+$break-large: 1200px;
+$shadow: 0px 0px 30px rgba(0,0,0,0.05), 0px 0px 14px rgba(0,0,0,0.03);
+
+@import "classes.scss";
+@import "forms.scss";
+@import "animations.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  height: 100%;
+  color: $color;
+}
+
+a {
+  color: $color-primary;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#app {
+  height: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: $shadow;
+  nav {
+    width: 100%;
+    div.column {
+      &:nth-child(1) {
+        display: flex;
+        align-items: center;
+        input {
+          margin: 0;
+        }
+      }
+    }
+    div.flex {
+      justify-content: space-between;
+    }
+    h1.logo {
+      font-family: "Vibur";
+      color: #000;
+      font-size: 22px;
+      margin: 0;
+      display: inline-block;
+      a {
+        color: #000;
+        font-weight: normal;
+      }
+    }
+    button {
+      flex-basis: 180px;
+    }
+    form {
+      flex-grow: 1;
+      div.search-box {
+        position: relative;
+        i {
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          transform: translate(0, -50%);
+        }
+        input {
+          padding-left: 50px;
+          color: rgba(0, 0, 0, 0.5);
+          &::placeholder {
+            color: rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+  }
+  ul.user-actions {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      list-style: none;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+}
+header.only-logo {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  .container {
+    width: 100%;
+    padding: 0 30px;
+    max-width: initial;
+  }
+  nav {
+    h1 {
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+h1 {
+  font-family: "Dosis", sans-serif;
+  font-weight: normal;
+  font-size: 36px;
+}
+
+.text {
+  align-self: center;
+  flex-basis: 35%;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: $break-small) {
+    flex-basis: 100% !important;
+  }
+  .content {
+    width: 320px;
+    padding: 0rem;
+    @media screen and (max-width: $break-large) {
+      padding: 0.5rem;
+    }
+    @media screen and (max-width: $break-small) {
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 7px 30px -10px rgba(255, 255, 255, 0.9);
+      border: 1px solid #f1f1f188;
+      background-color: rgb(255, 255, 255);
+      background-color: rgba(
+        255,
+        255,
+        255,
+        0.8
+      );
+    }
+  }
+}
+
+.ref {
+  &:hover {
+    opacity: 0.9;
+  }
+}
