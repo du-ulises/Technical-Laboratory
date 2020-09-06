@@ -22,7 +22,7 @@
         </ValidationProvider>
         <ValidationProvider v-slot="v">
           <span class="error" v-if="v.errors[0]">{{ v.errors[0] }}</span>
-          <input type="password" placeholder="*******" v-model="password" />
+          <input type="password" placeholder="Password" v-model="password" />
         </ValidationProvider>
         <p class="text-center error" v-show="error">{{ error }}</p>
         <button

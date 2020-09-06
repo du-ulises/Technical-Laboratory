@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
   apiUrl: "https://pokeapi.co/api/v2",
+  apiImages: "https://pokeres.bastionbot.org/images/pokemon"
 };
 
 export const firebaseConfig = {

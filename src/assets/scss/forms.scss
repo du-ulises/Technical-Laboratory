@@ -82,7 +82,7 @@ textarea {
 
 span.error {
   padding: 0 20px;
-  color: #f23c3c;
+  color: $color-danger;
   font-size: 10px;
   font-weight: bold;
   margin-bottom: 5px;
@@ -91,7 +91,7 @@ span.error {
 
 p.error {
   padding: 0 20px;
-  color: #f23c3c;
+  color: $color-danger;
   font-size: 12px;
   font-weight: bold;
   margin-bottom: 5px;
@@ -116,4 +116,48 @@ p.error {
     transform: none;
     cursor: not-allowed;
   }
+}
+
+.dropdown {
+	width: 20rem;
+	position: relative;
+	&:hover {
+		color: $color-primary;
+	}
+}
+
+.dropdown-select {
+	padding: 1rem;
+	border-radius: 4px;
+	background-color: white;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.2rem;
+	cursor: pointer;
+  text-transform: capitalize;
+  font-family: "Dosis", sans-serif;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.dropdown-list-item {
+	border-radius: 4px;
+	padding: 1rem;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.btn-outline-danger {
+  background: $color-light;
+  color: $color-danger;
+  border: 2px solid $color-danger;
+}
+
+.btn-outline-primary {
+  background: $color-light;
+  color: $color-primary;
+  border: 2px solid $color-primary;
 }
