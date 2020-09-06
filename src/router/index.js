@@ -4,6 +4,7 @@ import store from "../store";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import NotFound from "../views/NotFound.vue";
+import Details from "../views/Details.vue"
 
 Vue.use(VueRouter);
 
@@ -19,13 +20,9 @@ const routes = [
     component: Login,
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/pokemon-detail",
+    name: "Details",
+    component: Details,
   },
   { path: '/404', name: "Not Found", component: NotFound },  
   { path: '*', redirect: '/404' }, 
@@ -38,7 +35,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const protectedRoutes = ["/home", "/about"];
+  const protectedRoutes = ["/home", "/about", "/pokemon-detail"];
   if (protectedRoutes.includes(to.path) && !store.getters.user) next("/");
   else if (to.path === "/" && store.getters.user) next("/home");
   else next();

@@ -12,7 +12,7 @@
               <li>
                 <a href="#" @click="logout()" class="welcome">
                   <i class="las la-user-circle"></i>
-                  Welcome {{name}}
+                  {{isNewUser ? "Welcome" : "Hello"}} {{name}}
                 </a>
               </li>
             </ul>
@@ -52,6 +52,7 @@ export default {
       toolbar: true,
       logged: true,
       name: "",
+      isNewUser: false
     };
   },
   created() {
@@ -71,6 +72,7 @@ export default {
       if (this.$store.getters.user) {
         this.logged = true;
         this.name = this.$store.getters.user.email;
+        this.isNewUser = this.$store.getters.additionalUserInfo.isNewUser;
       } else this.logged = false;
     },
     logout() {

@@ -15,12 +15,10 @@
       <h4>Abilities</h4>
       <p style="margin-bottom: 0.5rem;">{{ getAbilities(item.information.abilities) }}</p>
       <h4>Types</h4>
-      <div class="text">
-        <p style="margin-bottom: 0.5rem;">{{ getTypes(item.information.types) }}</p>
-      </div>
+      <p style="margin-bottom: 0.5rem;">{{ getTypes(item.information.types) }}</p>
       <div class="buttons">
         <button class="button" @click="handleClick(item)">Choose pokemon</button>
-        <router-link :to="`/pokemon-detail/${item.name}`">Go to details</router-link>
+        <a href="#" @click="goDetails(item)">Go to details</a>
       </div>
     </div>
   </div>
@@ -61,7 +59,11 @@ export default {
     },
     handleClick(item) {
       this.$emit("click", item);
-    }
+    },
+    goDetails(item) {
+      this.$store.commit("setPokemonDetails", item);
+      this.$router.push(`/pokemon-detail`);
+    },
   },
 };
 </script>
@@ -90,10 +92,10 @@ export default {
       rgb(197, 0, 0) 51%
     );
     z-index: 2;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     opacity: 0.8;
     box-shadow: $shadow;
-    &:hover{
+    &:hover {
       opacity: 1;
       transform: rotate(15deg) scale(0.95);
     }

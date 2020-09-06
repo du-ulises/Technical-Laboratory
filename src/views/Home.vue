@@ -19,11 +19,11 @@
         <div class="row" v-if="!loading">
           <div
             class="col-lg-4"
-            v-show="pokemonsList.length !== 0"
+            v-show="pokemonsList.length !== 0 && !item.selected"
             v-for="(item, index) in pokemonsList"
             :key="index"
           >
-            <card v-if="!item.selected" @click="handleClick" :item="item" />
+            <card @click="handleClick" :item="item" />
           </div>
         </div>
         <div class="row" v-if="loading">
@@ -146,8 +146,6 @@ export default {
           this.$store.commit("setPokemons", list);
           this.pokemonsList = list;
 
-          console.log("Pokemons List");
-          console.log(list);
           this.loading = false;
         });
       } catch (error) {
@@ -194,7 +192,6 @@ export default {
       try {
         this.loading = true;
         api.getAllPokemon(12).then(async (response) => {
-          console.log(response.data.results);
           let list = [];
           response.data.results.forEach((element) => {
             list.push({ pokemon: element });
@@ -222,8 +219,6 @@ export default {
           this.$store.commit("setPokemons", list);
           this.pokemonsList = list;
 
-          console.log("All Pokemons List");
-          console.log(list);
           this.loading = false;
           this.currentType = "All";
         });

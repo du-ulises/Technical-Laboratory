@@ -4,21 +4,21 @@
       <img src="@/assets/images/snorlax.jpg" />
     </div>
     <div class="fade-in">
-<div class="row justify-center">
-      <img class="logo" alt="Vue logo" src="../assets/images/pokemon-logo.png" />
+      <div class="row justify-center">
+        <img class="logo" alt="Vue logo" src="../assets/images/pokemon-logo.png" />
+      </div>
+      <div class="title fade-in">404</div>
+      <h1 style="color: #fff" class="lost">You got lost?</h1>
+      <br />
+      <p style="color: #fff" class="text">
+        We can't find the page you're looking for.
+        <router-link
+          class="notFoundLink"
+          :to="logged ? '/home' : '/'"
+        >{{logged ? "Return to home page" : "Log in"}}</router-link>
+      </p>
     </div>
-    <div class="title fade-in">404</div>
-    <h1 style="color: #fff" class="lost">You got lost?</h1>
-    <br />
-    <p style="color: #fff" class="text">
-      We can't find the page you're looking for.
-      <router-link
-        class="notFoundLink"
-        :to="logged ? '/home' : '/'"
-      >{{logged ? "Return to home page" : "Log in"}}</router-link>
-    </p>
-    </div>
-    
+
     <br />
   </div>
 </template>
