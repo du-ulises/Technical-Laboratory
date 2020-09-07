@@ -4,7 +4,7 @@
       <div class="native-sponsor" style="background-color: #ffffff; color: #030303;">Developing</div>
       <div class="native-text">By Diego Ulises Martínez — This application is not in production.</div>
     </a>
-    <a class="native-link fade-in" href="#">
+    <a class="native-link fade-in">
       <div
         class="native-sponsor testErrorInterceptor"
         @click="testRequest()"

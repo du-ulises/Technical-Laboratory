@@ -84,7 +84,6 @@
             @click="removeAll()"
             :class="{'darkMode-button-outline': getMode}"
           >Remove all selected pokemons</button>
-          <div></div>
         </div>
       </div>
     </div>

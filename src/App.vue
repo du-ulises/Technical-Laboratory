@@ -35,8 +35,8 @@ export default {
       (newValue) => {
         if (newValue) {
           this.$vToastify.error({
-            title: "¡Error!",
-            body: "Opps algo salio mal.",
+            title: "Error Interceptor",
+            body: "Error handled correctly.",
             type: "error",
             canPause: true,
             canTimeout: true,

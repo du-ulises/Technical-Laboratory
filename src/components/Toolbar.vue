@@ -40,7 +40,9 @@
             </ul>
           </div>
           <div class="column responsive-md" v-if="logged && toolbar">
-            <a href="#" @click="console.log('Cooming Soon')" style="margin-left: 1.5rem">Menu</a>
+            <div style="width: 65px">
+              <MenuResponsive :isNewUser="isNewUser" :name="name" @click="toogle()" />
+            </div>
           </div>
         </div>
       </div>
@@ -49,7 +51,12 @@
 </template>
 
 <script>
+import MenuResponsive from "@/components/MenuResponsive.vue";
+
 export default {
+  components: {
+    MenuResponsive,
+  },
   data() {
     return {
       toolbar: true,
