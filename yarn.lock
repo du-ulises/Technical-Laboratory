@@ -9289,6 +9289,13 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
+vue-toastify@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/vue-toastify/-/vue-toastify-1.8.0.tgz#3632a6a2800f3ebb1c216fa13bf26fd439560f5f"
+  integrity sha512-x+LCXLyUdXYkzt/rQCsGTFdaoh6S1Y05eOgrFKKzTYjrpp0jXGgxFCS46dE8GUm72edjMykha2BJs/RCXX+PcQ==
+  dependencies:
+    vue "^2.6.11"
+
 vue@^2.6.11:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"

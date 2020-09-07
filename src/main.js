@@ -8,9 +8,15 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import { firebaseConfig } from './environments/environment'
 
+import interceptor from './helpers/error.interceptor'
+import VueToastify from "vue-toastify";
+
 Vue.config.productionTip = false
 
 firebase.initializeApp(firebaseConfig);
+
+interceptor()
+Vue.use(VueToastify);
 
 new Vue({
   router,

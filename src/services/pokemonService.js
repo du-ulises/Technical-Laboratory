@@ -20,3 +20,7 @@ export async function getPokemonDescription(id) {
 export async function getPokemonTypeById(id) {
   return await axios.get(`${environment.apiUrl}/type/${id}`);
 }
+
+export async function badRequest() {
+  return await axios.get(`${environment.apiUrl}/bad/`);
+}

@@ -13,6 +13,7 @@ export default new Vuex.Store({
     selectedList: [],
     pokemonDetails: null,
     darkMode: false,
+    errorInterceptor: false,
   },
   mutations: {
     setAdditionalUserInfo(state, t) {
@@ -36,6 +37,9 @@ export default new Vuex.Store({
     setDarkMode(state, darkMode) {
       state.darkMode = darkMode;
     },
+    setErrorInterceptor(state, errorInterceptor) {
+      state.errorInterceptor = errorInterceptor;
+    },
   },
   getters: {
     additionalUserInfo: (state) => {
@@ -58,6 +62,9 @@ export default new Vuex.Store({
     },
     darkMode: (state) => {
       return state.darkMode;
+    },
+    errorInterceptor: (state) => {
+      return state.errorInterceptor;
     },
   },
   actions: {},
