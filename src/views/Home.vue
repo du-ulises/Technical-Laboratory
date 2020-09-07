@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" :class="{'darkMode-bg': getMode}">
     <div class="row justify-center align-center">
       <h3 class="isShowingAll" v-if="currentType==='All'">¡Showing all pokemons!</h3>
       <div class="dropdown">
@@ -23,7 +23,7 @@
             v-for="(item, index) in pokemonsList"
             :key="index"
           >
-            <card @click="handleClick" :item="item" />
+            <card @click="handleClick" :item="item" :darkMode="getMode" />
           </div>
         </div>
         <div class="row" v-if="loading">
@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="col-lg-3">
-        <div class="resume">
+        <div class="resume" :class="{'darkMode': getMode}">
           <h2>Selected pokemons</h2>
           <table>
             <thead>
@@ -60,7 +60,11 @@
                 <th>{{item.pokemon.name}}</th>
                 <td>{{ getAbilities(item.information.abilities) }}</td>
                 <td>
-                  <button class="button" @click="removeItem(item, i)">Remove</button>
+                  <button
+                    class="button"
+                    @click="removeItem(item, i)"
+                    :class="{'darkMode-button': getMode}"
+                  >Remove</button>
                 </td>
               </tr>
               <tr v-if="selectedList.length===0">
@@ -73,11 +77,14 @@
           <button
             class="button btn-outline-primary"
             @click="reloadAllPokemons()"
+            :class="{'darkMode-button-outline': getMode}"
           >Reload list of all pokemons</button>
           <button
             class="button btn-outline-danger"
             @click="removeAll()"
+            :class="{'darkMode-button-outline': getMode}"
           >Remove all selected pokemons</button>
+          <div></div>
         </div>
       </div>
     </div>
@@ -113,9 +120,7 @@ export default {
         this.types.push(element);
       }
     });
-    // this.currentType = this.types[0].name;
-    // await this.getPokemons(this.currentType);
-    await this.reloadAllPokemons()
+    await this.reloadAllPokemons();
   },
   methods: {
     async getPokemons(currentType) {
@@ -228,7 +233,11 @@ export default {
       }
     },
   },
-  computed: {},
+  computed: {
+    getMode() {
+      return this.$parent.darkMode;
+    },
+  },
 };
 </script>
 

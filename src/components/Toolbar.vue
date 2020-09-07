@@ -1,16 +1,19 @@
 <template>
-  <header id="main-header" :class="{'only-logo': !toolbar}">
+  <header id="main-header" :class="{'only-logo': !toolbar, 'darkMode': darkMode && toolbar}">
     <nav>
       <div class="container">
         <div class="flex align-center">
           <div class="column">
             <h1 class="logo fade-in">
-              <router-link to="/">Technical Laboratory</router-link>
+              <router-link
+                to="/"
+                :class="{'darkMode-link': darkMode && toolbar}"
+              >Technical Laboratory</router-link>
             </h1>
 
             <ul class="user-actions fade-in hidden-md" v-if="logged && toolbar">
               <li>
-                <a href="#" @click="logout()" class="welcome">
+                <a href="#" @click="logout()" class="welcome" :class="{'darkMode-link': darkMode}">
                   <i class="las la-user-circle"></i>
                   {{isNewUser ? "Welcome" : "Hello"}} {{name}}
                 </a>
@@ -23,16 +26,16 @@
           <div class="column hidden-md" v-if="toolbar">
             <ul class="user-actions fade-in" v-if="logged">
               <li>
-                <router-link to="/home">Home</router-link>
+                <router-link to="/home" :class="{'darkMode-link': darkMode}">Home</router-link>
               </li>
               <li>
-                <router-link to="/home">Skills</router-link>
+                <router-link to="/home" :class="{'darkMode-link': darkMode}">Skills</router-link>
               </li>
               <li>
-                <a href="#" @click="logout()">Log out</a>
+                <a href="#" @click="logout()" :class="{'darkMode-link': darkMode}">Log out</a>
               </li>
               <li>
-                <button @click="toogle()">Dark mode</button>
+                <button @click="toogle()" :class="{'darkMode-button': darkMode}">Dark mode</button>
               </li>
             </ul>
           </div>
@@ -52,10 +55,13 @@ export default {
       toolbar: true,
       logged: true,
       name: "",
-      isNewUser: false
+      isNewUser: false,
+      darkMode: false,
     };
   },
   created() {
+    this.darkMode = this.$store.getters.darkMode;
+    this.$emit("click", this.darkMode);
     this.checkRoute(this.$route);
   },
   watch: {
@@ -78,10 +84,13 @@ export default {
     logout() {
       this.$store.commit("setUser", null);
       this.$store.commit("setSelectedList", []);
+      this.$store.commit("setDarkMode", false);
       this.$router.push("/");
     },
     toogle() {
-      console.log("Mode");
+      this.darkMode = !this.$store.getters.darkMode;
+      this.$store.commit("setDarkMode", this.darkMode);
+      this.$emit("click", this.darkMode);
     },
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="card fade-in">
+  <div class="card fade-in" :class="{'darkMode': darkMode}">
     <div class="column">
       <div class="figure">
         <div class="point">
@@ -17,8 +17,8 @@
       <h4>Types</h4>
       <p style="margin-bottom: 0.5rem;">{{ getTypes(item.information.types) }}</p>
       <div class="buttons">
-        <button class="button" @click="handleClick(item)">Choose pokemon</button>
-        <a href="#" @click="goDetails(item)">Go to details</a>
+        <button class="button" @click="handleClick(item)"  :class="{'darkMode-button': darkMode}">Choose pokemon</button>
+        <a href="#" @click="goDetails(item)" :class="{'darkMode-link': darkMode}">Go to details</a>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@
 import { environment } from "@/environments/environment";
 
 export default {
-  props: ["item"],
+  props: ["item", "darkMode"],
   data() {
     return {
       url: environment.apiImages,

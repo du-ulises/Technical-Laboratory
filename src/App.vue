@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Toolbar/>
+    <Toolbar @click="handleMode"/>
     <router-view></router-view>
     <Sponsor v-if="!production"/>
   </div>
@@ -18,7 +18,13 @@ export default {
   },
   data() {
     return {
-      production: environment.production
+      production: environment.production,
+      darkMode: false
+    }
+  },
+  methods: {
+    handleMode(mode){
+      this.darkMode = mode
     }
   },
 }
